@@ -14,7 +14,7 @@ class Nav extends Component {
 
     render(){
         return(
-            <nav className={`navbar ${this.state.collapse ? '' : 'navbar-expand'}`} id="mainNav">
+            <nav className={`navbar ${this.state.collapse ? 'navbar-collapse' : 'navbar-expand'}`} id="mainNav">
                 <div className="container">
                         <a className="navbar-brand" href="#page-top">
                         <img className="bootstrapimg" src="https://startbootstrap.github.io/startbootstrap-agency/assets/img/navbar-logo.svg" alt="..."/>
@@ -26,22 +26,23 @@ class Nav extends Component {
                         </svg>
                     </button>
                 </div>
-                <div className={`navbar-collapse ${this.state.collapse ? 'collapse' : ''}`} id="navbarResponsive">
-                    <ul className={`navbar-nav ${this.state.collapse ? '' : 'expand'}`}>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#services">Services</a>
+                <div className={`navbar-collapse`} id="navbarResponsive">
+                    <ul className={`navbar-nav`} >
+                        <li className={`nav-item ${this.state.collapse ? 'collapse' : ''}`}>
+                            <a className={`nav-link ${this.state.collapse ? 'collapseText c1' : 'expand n1'}`} href="#services">Services</a>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#portfolio">Portfolio</a>
+                        <li className={`nav-item ${this.state.collapse ? 'collapse' : ''}`}>
+                            <a className={`nav-link ${this.state.collapse ? 'collapseText c2' : 'expand n2'}`} href="#portfolio">Portfolio</a>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#about">About</a>
+                        <li className={`nav-item ${this.state.collapse ? 'collapse' : ''}`}>
+                            <a className={`nav-link ${this.state.collapse ? 'collapseText c3' : 'expand n3'}`} href="#about">About</a>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#team">Team</a>
+                        <li className={`nav-item ${this.state.collapse ? 'collapse' : ''}`}>
+                            <a className={`nav-link ${this.state.collapse ? 'collapseText c4' : 'expand n4'}`} 
+                            href="#team">Team</a>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link js-scroll-trigger" href="#contact">Contact</a>
+                        <li className={`nav-item ${this.state.collapse ? 'collapse' : ''}`}>
+                            <a className={`nav-link ${this.state.collapse ? 'collapseText c5' : 'expand n5'}`} href="#contact">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -52,6 +53,7 @@ class Nav extends Component {
 
 export default Nav
 
+//${this.state.collapse ? '' : 'expand'}`} ${this.state.collapse ? 'collapse' : ''} ${this.state.collapse ? 'collapse' : 'expand'} ${this.state.collapse ? 'collapse' : 'expand'}
 
 //viewbox="0 0 448 512"
 
