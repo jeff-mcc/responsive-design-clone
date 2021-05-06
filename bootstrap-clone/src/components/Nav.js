@@ -8,42 +8,42 @@ class Nav extends Component {
         }
     }
 
-    handleClick = () => {
-        
+    handleCollapse = () => {
+        this.setState({collapse: !this.state.collapse})
     }
 
     render(){
         return(
-            <nav className="navbar" id="mainNav">
+            <nav className={`navbar ${this.state.collapse ? '' : 'navbar-expand'}`} id="mainNav">
                 <div className="container">
                         <a className="navbar-brand" href="#page-top">
                         <img className="bootstrapimg" src="https://startbootstrap.github.io/startbootstrap-agency/assets/img/navbar-logo.svg" alt="..."/>
                     </a>
                     <button className="navbar-toggler" type="button">
                         Menu
-                        <svg className="svg-inline" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <svg className="svg-inline" onClick={this.handleCollapse} role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                             <path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path>
                         </svg>
                     </button>
-                    <div className="navbar-collapse" id="navbarResponsive">
-                        <ul className="navbar-nav">
-                            <li className="nav-item">
-                                <a className="nav-link" href="#services">Services</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#portfolio">Portfolio</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#about">About</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#team">Team</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link js-scroll-trigger" href="#contact">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
+                </div>
+                <div className={`navbar-collapse ${this.state.collapse ? 'collapse' : ''}`} id="navbarResponsive">
+                    <ul className="navbar-nav">
+                        <li className="nav-item">
+                            <a className="nav-link" href="#services">Services</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#portfolio">Portfolio</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#about">About</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#team">Team</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link js-scroll-trigger" href="#contact">Contact</a>
+                        </li>
+                    </ul>
                 </div>
             </nav>
         )
