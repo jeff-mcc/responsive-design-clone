@@ -4,7 +4,9 @@ class Nav extends Component {
     constructor(){
         super()
         this.state = {
-            collapse: true
+            collapse: true,
+            clickdown: false,
+            clickup: true
         }
     }
 
@@ -12,24 +14,33 @@ class Nav extends Component {
         this.setState({collapse: !this.state.collapse})
     }
 
+    handleClick = () => {
+            this.setState({clickup: true})
+            window.scroll({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            })
+    }
+
     render(){
         return(
             <nav className={`navbar ${this.state.collapse ? 'navbar-collapse' : 'navbar-expand'}`} id="mainNav">
                 <div className="container">
-                        <a className="navbar-brand" href="#page-top">
+                        <a className={`navbar-brand ${this.state.clickup ? 'scrollup' : ''}`} name="page-top" onClick={()=>this.handleClick()} href="#page-top">
                         <img className="bootstrapimg" src="https://startbootstrap.github.io/startbootstrap-agency/assets/img/navbar-logo.svg" alt="..."/>
                     </a>
                     <button className="navbar-toggler" type="button">
                         Menu
-                        <svg className="svg-inline" onClick={this.handleCollapse} role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                            <path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path>
+                        <svg className="svg-inline-bars" onClick={this.handleCollapse} role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path fill="white" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path>
                         </svg>
                     </button>
                 </div>
                 <div className={`navbar-collapse`} id="navbarResponsive">
                     <ul className={`navbar-nav`} >
                         <li className={`nav-item ${this.state.collapse ? 'collapse' : ''}`}>
-                            <a className={`nav-link ${this.state.collapse ? 'collapseText c1' : 'expand n1'}`} href="#services">Services</a>
+                            <a className={`nav-link ${this.state.collapse ? 'collapseText c1' : 'expand n1'}`} name="services" href="#services">Services</a>
                         </li>
                         <li className={`nav-item ${this.state.collapse ? 'collapse' : ''}`}>
                             <a className={`nav-link ${this.state.collapse ? 'collapseText c2' : 'expand n2'}`} href="#portfolio">Portfolio</a>
