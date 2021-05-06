@@ -41,7 +41,7 @@ class Nav extends Component {
                             <a className={`nav-link ${this.state.collapse ? 'collapseText c4' : 'expand n4'}`} 
                             href="#team">Team</a>
                         </li>
-                        <li className={`nav-item ${this.state.collapse ? 'collapse' : ''}`}>
+                        <li className={`nav-item last ${this.state.collapse ? 'collapse' : ''}`}>
                             <a className={`nav-link ${this.state.collapse ? 'collapseText c5' : 'expand n5'}`} href="#contact">Contact</a>
                         </li>
                     </ul>
