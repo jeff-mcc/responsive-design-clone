@@ -27,7 +27,7 @@ class Nav extends Component {
                     </button>
                 </div>
                 <div className={`navbar-collapse ${this.state.collapse ? 'collapse' : ''}`} id="navbarResponsive">
-                    <ul className="navbar-nav">
+                    <ul className={`navbar-nav ${this.state.collapse ? '' : 'expand'}`}>
                         <li className="nav-item">
                             <a className="nav-link" href="#services">Services</a>
                         </li>
